@@ -1,0 +1,2 @@
+rm -rf rplidar_ros2
+git clone https://github.com/babakhani/rplidar_ros2.git

@@ -1,0 +1,21 @@
+services:
+        imu:
+                image: cengaver/imu:latest
+                privileged: true
+                entrypoint: ["/autostart.sh"]
+                network_mode: host
+        lidar:
+                image: cengaver/lidar:latest
+                privileged: true
+                entrypoint: ["/autostart.sh"]
+                network_mode: host
+        slam-toolbox:
+                image: cengaver/slam-toolbox:latest
+                privileged: true
+                entrypoint: ["/autostart.sh"]
+                network_mode: host
+        foxglove-bridge:
+                image: cengaver/foxglove-bridge:latest
+                privileged: true
+                entrypoint: ["/autostart.sh"]
+                network_mode: host

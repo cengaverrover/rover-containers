@@ -1,0 +1,4 @@
+#!/bin/bash
+rm -rf cengaver_rover_description
+
+git clone https://github.com/cengaverrover/cengaver_rover_description.git
