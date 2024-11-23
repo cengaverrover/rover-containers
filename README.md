@@ -10,7 +10,7 @@ cd build/
 ```
 
 * The `Buildspecific` script uses the already cached repositories to build docker images. 
-<span style="color:orange"> This means the repositories (or the container itself) can be configured and rebuilt without the need of a network.</span> 
+<span style="color:orange"> This means the repositories (or the container itself) can be configured and rebuilt without updating the repo from github.</span> 
 ```bash
 cd build/
 ./Buildspecific <folder-name>
