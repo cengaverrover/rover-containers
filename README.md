@@ -36,7 +36,7 @@ If you needed to change anything about the containers (changing repositories man
 You can check each container by its name in the `build/` directory.
 ### How build folders work
 Each folder is required to have a `Dockerfile`, and an `init`.
-`init` is used to refresh any repositories that are being used, while `Dockerfile` copies said repository from the `build/<image-name>` folder, and builds the final image. 
+`init` is a bash script used to refresh any repositories that are being used, while `Dockerfile` copies said repository from the `build/<image-name>` folder, and builds the final image. 
 
 It is best practice to keep your repository clones inside `init`, so in case things needed to be modified offline, they can! 
 Any cloned repository can also be found under the container folder its being used in.
