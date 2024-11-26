@@ -7,8 +7,8 @@ RUN apt-get update && apt-get install -y git ros-humble-rmw-cyclonedds-cpp
 ENV RMW_IMPLEMENTATION rmw_cyclonedds_cpp
 
 WORKDIR /home
-COPY ./jetson_imu/ /home/src/.
-RUN source /opt/ros/humble/setup.bash && colcon build
+COPY ./bno055_ros2/ /home/src/.
+RUN source /opt/ros/humble/setup.bash && colcon build --cmake-args=-DCMAKE_BUILD_TYPE='Release' --packages-select bno055_ros2
 
 WORKDIR /
 COPY as.sh /autostart.sh

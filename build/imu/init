@@ -1,3 +1,3 @@
-rm -rf https://github.com/alpertng02/jetson_imu.git
+rm -rf ./bno055_ros2
 
-git clone --recurse-submodules https://github.com/alpertng02/jetson_imu.git
+git clone --recurse-submodules https://github.com/cengaverrover/bno055_ros2.git
