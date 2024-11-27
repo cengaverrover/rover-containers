@@ -13,4 +13,3 @@ RUN source /opt/ros/humble/setup.bash && colcon build --cmake-args=-DCMAKE_BUILD
 WORKDIR /
 COPY as.sh /autostart.sh
 RUN chmod +x /autostart.sh
-ENTRYPOINT ["/autostart.sh"]

@@ -6,7 +6,7 @@ for dockerfile in ./*/Dockerfile; do
     printf '\e[1;34m%-6s\e[m\n' "Building cengaver/$tag"
     
     (cd $dir && bash init)    
-    docker build -f "$dockerfile" -t "cengaver/$tag" "$dir"
+    docker build --no-cache -f "$dockerfile" -t "cengaver/$tag" "$dir"
     
     if [ $? -ne 0 ]; then
         printf '\e[1;31m%-6s\e[m\n' "!!!Failed to build image for $tag!!!"

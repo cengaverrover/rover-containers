@@ -13,4 +13,3 @@ RUN source /opt/ros/humble/setup.bash && colcon build
 WORKDIR /
 COPY as.sh /autostart.sh
 RUN chmod +x /autostart.sh
-ENTRYPOINT ["/autostart.sh"]

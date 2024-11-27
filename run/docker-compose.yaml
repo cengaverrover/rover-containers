@@ -11,15 +11,11 @@ services:
                 entrypoint: ["/autostart.sh"]
                 network_mode: host
                 ipc: host
-        slam-toolbox:
-                image: cengaver/slam-toolbox:latest
+        rover-descriptor:
+                image: cengaver/descriptor:latest
                 privileged: true
                 entrypoint: ["/autostart.sh"]
                 network_mode: host
                 ipc: host
-        foxglove-bridge:
-                image: cengaver/foxglove-bridge:latest
-                privileged: true
-                entrypoint: ["/autostart.sh"]
-                network_mode: host
-                ipc: host
+                ports:
+                  - 8765:8765
