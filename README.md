@@ -19,17 +19,16 @@ cd build/
 (Note that for `Buildspecific` to work, you need to have ran `buildall` at least once.)
 
 ## Running Containers
-The main method for starting all containers is `docker-compose`:
+The main method for starting all containers is `startall`:
 
 ```bash
-cd run/ && docker-compose up
-#add -d if you need to start it detached
+... /run/startall
 ```
 
 Alternatively, for running a single container:
 
 ```bash
-cd run/ && ./start-docker-device.sh <docker-image-name>
+... run/Startspecific <docker-image-name>
 ```
 ## Editing containers
 If you needed to change anything about the containers (changing repositories manually, adding a line to the autostart script, etc.) 

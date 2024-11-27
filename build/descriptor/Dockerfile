@@ -1,5 +1,5 @@
-# Cengaver Rover Foxglove Dockerfile - denavdot/v3
-# latest change(s): rover_description now initializes before bridge is started, repositories are copied instead of cloned
+# Cengaver Rover Descriptor Dockerfile - denavdot/v1
+# latest change(s): -
 FROM ros:humble
 SHELL ["/bin/bash","-c"]
 

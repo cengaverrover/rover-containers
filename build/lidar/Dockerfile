@@ -1,5 +1,5 @@
-# Cengaver Rover Lidar Dockerfile - denavdot/v3
-# latest change(s): repositories are copied instead of cloned
+# Cengaver Rover Lidar Dockerfile - denavdot/v4
+# latest change(s): Custom forked repo
 FROM ros:humble
 SHELL ["/bin/bash","-c"]
 

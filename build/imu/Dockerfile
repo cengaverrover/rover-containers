@@ -1,5 +1,5 @@
 # Cengaver Rover IMU Dockerfile - denavdot/v3
-# latest change(s): repositories are copied instead of cloned
+# latest change(s): rename to bno055
 FROM ros:humble
 SHELL ["/bin/bash","-c"]
 
