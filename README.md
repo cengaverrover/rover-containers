@@ -28,7 +28,7 @@ The main method for starting all containers is `startall`:
 Alternatively, for running a single container:
 
 ```bash
-... run/Startspecific <docker-image-name>
+... /run/Startspecific <docker-image-name>
 ```
 ## Editing containers
 If you needed to change anything about the containers (changing repositories manually, adding a line to the autostart script, etc.) 
