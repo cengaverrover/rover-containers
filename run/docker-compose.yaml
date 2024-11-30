@@ -17,5 +17,9 @@ services:
                 entrypoint: ["/autostart.sh"]
                 network_mode: host
                 ipc: host
-                ports:
-                  - 8765:8765
+        microros:
+                image: microros/micro-ros-agent:humble
+                privileged: true
+                network_mode: host
+                ipc: host
+                command: udp4 -p 9999

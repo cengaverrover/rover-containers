@@ -1,6 +1,6 @@
 #!/bin/bash
 
-options=("lidar" "lidar-simulation" "imu" "descriptor")
+options=("lidar" "lidar-simulation" "imu" "descriptor" "micro-ros-agent")
 
 if [ -z "$1" ]; then
 	echo "Usage: $0 <name>"
@@ -13,10 +13,12 @@ fi
 if [ "$1" == "lidar-simulation" ]; then
 	docker run --privileged --net=host --ipc=host -it cengaver/lidar:latest bash /autostart.sh use_sim_time:=true
 	wait ; exit
+elif [ "$1" == "micro-ros-agent" ]; then
+	docker run -it --net=host microros/micro-ros-agent:humble udp4 -p 9999
+	wait ; exit
 fi
 docker run \
 	--privileged \
-	-p 8765:8765 \
        	--ipc=host \
 	--net=host \
 	-it cengaver/"$1":latest \
