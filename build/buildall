@@ -1,5 +1,7 @@
 #!/bin/bash
-for dockerfile in ./*/Dockerfile; do
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+for dockerfile in "$SCRIPT_DIR"/*/Dockerfile; do
     dir=$(dirname "$dockerfile")
     tag=$(basename "$dir")
 
@@ -7,7 +9,6 @@ for dockerfile in ./*/Dockerfile; do
     
     (cd $dir && bash init)    
     docker build --no-cache -f "$dockerfile" -t "cengaver/$tag" "$dir"
-    
     if [ $? -ne 0 ]; then
         printf '\e[1;31m%-6s\e[m\n' "!!!Failed to build image for $tag!!!"
 	exit 1

@@ -1,0 +1,12 @@
+[submodule "build/imu/bno055_ros2"]
+	path = build/imu/bno055_ros2
+	url = https://github.com/cengaverrover/bno055_ros2.git
+[submodule "build/lidar/rplidar_ros2"]
+	path = build/lidar/rplidar_ros2
+	url = https://github.com/cengaverrover/rplidar_ros2.git
+[submodule "build/rover-description/cengaver_rover_description"]
+	path = build/rover-description/cengaver_rover_description
+	url = https://github.com/cengaverrover/cengaver_rover_description.git
+[submodule "build/rover-description/rover_mobility_interfaces"]
+	path = build/rover-description/rover_mobility_interfaces
+	url = https://github.com/cengaverrover/rover_mobility_interfaces.git

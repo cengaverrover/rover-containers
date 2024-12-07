@@ -11,8 +11,8 @@ services:
                 entrypoint: ["/autostart.sh"]
                 network_mode: host
                 ipc: host
-        rover-descriptor:
-                image: cengaver/descriptor:latest
+        rover-description:
+                image: cengaver/rover-description:latest
                 privileged: true
                 entrypoint: ["/autostart.sh"]
                 network_mode: host
