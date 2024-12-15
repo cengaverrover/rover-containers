@@ -1,5 +1,6 @@
 #!/bin/bash
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+SCRIPT_DIR="$(dirname $(readlink -f "$0"))"
 
 for dockerfile in "$SCRIPT_DIR"/*/Dockerfile; do
     dir=$(dirname "$dockerfile")
