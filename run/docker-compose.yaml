@@ -22,4 +22,4 @@ services:
                 privileged: true
                 network_mode: host
                 ipc: host
-                command: udp4 -p 9999
+                command: serial --dev /dev/ttyAMC0
