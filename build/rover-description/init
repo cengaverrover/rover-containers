@@ -1,4 +1,5 @@
 rm -rf cengaver_rover_description 
-rm -rf rover_mobility_interfaces 
 git clone https://github.com/cengaverrover/cengaver_rover_description.git -b ros2_control
+
+rm -rf rover_mobility_interfaces 
 git clone https://github.com/cengaverrover/rover_mobility_interfaces.git
