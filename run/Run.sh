@@ -6,7 +6,7 @@ if [ "$1" == "lidar-simulation" ]; then
 	docker run --privileged --net=host --ipc=host -it cengaver/lidar:latest bash /autostart.sh use_sim_time:=true
 	wait ; exit
 elif [ "$1" == "micro-ros-agent" ]; then
-	docker run -it --net=host microros/micro-ros-agent:humble serial --dev /dev/ttyACM0
+	docker run --privileged --net=host --ipc=host -it microros/micro-ros-agent:humble serial --dev /dev/ttyACM0
 	wait ; exit
 fi
 
