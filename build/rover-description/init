@@ -1,11 +1,11 @@
 rm -rf cengaver_rover_description 
-git clone https://github.com/cengaverrover/cengaver_rover_description.git -b ros2_control
+git clone https://github.com/cengaverrover/cengaver_rover_description.git
 
 rm -rf rover_teleoperation
 git clone https://github.com/alpertng02/rover_teleoperation.git
 
 rm -rf mobility_controller
-git clone https://github.com/alpertng02/mobility_controller.git
+git clone https://github.com/alpertng02/mobility_controller.git -b new_protocol
 
 rm -rf manipulator_controller
 git clone https://github.com/alpertng02/manipulator_controller.git

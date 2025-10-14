@@ -7,11 +7,12 @@ RUN apt-get update && apt-get install -y git ros-humble-rmw-cyclonedds-cpp ros-h
 ENV RMW_IMPLEMENTATION rmw_cyclonedds_cpp
 
 WORKDIR /ros_ws/
-COPY ./cengaver_rover_description /ros_ws./src/.
-COPY ./rover_teleoperation/ /ros_ws/src/.
-COPY ./mobility_controller /ros_ws/src/.
-COPY ./manipulator_controller /ros_ws/src/.
-#COPY ./bno055_ros2 /ros_ws/src/. disabled for maintenance
+COPY cengaver_rover_description /ros_ws/src/cengaver_rover_description
+COPY rover_teleoperation /ros_ws/src/rover_teleoperation
+COPY mobility_controller /ros_ws/src/mobility_controller
+COPY manipulator_controller /ros_ws/src/manipulator_controller
+# COPY bno055_ros2 /ros_ws/src/bno055_ros2   # disabled for maintenance
+
 RUN apt update && \
     rosdep update && \
     rosdep install --from-paths src --ignore-src -r -y && \
