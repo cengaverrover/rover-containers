@@ -12,7 +12,11 @@ COPY ./rover_teleoperation/ /ros_ws/src/.
 COPY ./mobility_controller /ros_ws/src/.
 COPY ./manipulator_controller /ros_ws/src/.
 #COPY ./bno055_ros2 /ros_ws/src/. disabled for maintenance
-RUN apt update && rosdep update && rosdep install --from-path src --ignore-src -y && colcon build
+RUN apt update && \
+    rosdep update && \
+    rosdep install --from-paths src --ignore-src -r -y && \
+    source /opt/ros/${ROS_DISTRO}/setup.bash && \
+    colcon build --symlink-install
  
 WORKDIR /
 COPY autostart.sh /autostart.sh
