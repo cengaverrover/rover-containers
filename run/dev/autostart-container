@@ -1,0 +1,25 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+  echo "Usage: $0 <docker_image_name>"
+  exit 1
+fi
+
+DOCKER_IMAGE="$1"
+CONTAINER_NAME="${DOCKER_IMAGE#*/}"
+
+# Make sure Docker is running
+sudo systemctl start docker
+
+docker run -d \
+  --name "$CONTAINER_NAME" \
+  --restart unless-stopped \
+  --privileged \
+  --net=host \
+  --ipc=host \
+  -p 8765:8765 \
+  -v /tmp/.X11-unix:/tmp/.X11-unix \
+  -v /home/cengaver/:/mnt/ \
+  -e DISPLAY=$DISPLAY \
+  "$DOCKER_IMAGE"
+
