@@ -2,4 +2,4 @@
 source /opt/ros/humble/setup.bash
 source /ros_ws/install/setup.bash
 
-exec ros2 launch cengaver_rover_description rsp.launch.py use_foxglove:=true use_control:=true use_usb_cam:=true
+exec ros2 launch cengaver_rover_description rover.launch.py use_foxglove:=true use_ds4:=true
