@@ -8,6 +8,7 @@ source /ros_ws/install/setup.bash
 
 #refresh config file(s)
 cp /configs/bno055_config.yaml /ros_ws/src/bno055/config/bno055_config.yaml
+echo "updated configs"
 
 if [ "$1" == "debug" ]; then
     echo "entering debug mode..."

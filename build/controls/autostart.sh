@@ -15,6 +15,7 @@ if [ "$1" == "debug" ]; then
     echo "entering debug mode..."
     exec bash
 elif [ "$1" == "default" ]; then
+    echo "running default mode..."
     exec python3 autostart.launch.py
 else    echo -e "arguments: \n   default, debug"
     exit 0
