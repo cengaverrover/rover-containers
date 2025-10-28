@@ -2,24 +2,32 @@ services:
         imu:
                 image: cengaver/imu:latest
                 privileged: true
-                entrypoint: ["/autostart.sh"]
+                entrypoint: ["/autostart.sh", "default"]
                 network_mode: host
                 ipc: host
+                volumes:
+                        - ./../config:/configs
         lidar:
                 image: cengaver/lidar:latest
                 privileged: true
-                entrypoint: ["/autostart.sh"]
+                entrypoint: ["/autostart.sh", "default"]
                 network_mode: host
                 ipc: host
-        rover-description:
-                image: cengaver/rover-description:latest
+                volumes:
+                        - ./../config:/configs
+        controls:
+                image: cengaver/controls:latest
                 privileged: true
-                entrypoint: ["/autostart.sh"]
+                entrypoint: ["/autostart.sh", "default"]
                 network_mode: host
                 ipc: host
-        microros:
-                image: microros/micro-ros-agent:humble
-                privileged: true
-                network_mode: host
-                ipc: host
-                command: serial --dev /dev/ttyAMC0
+                volumes:
+                        - ./../config:/configs
+        #cameras:
+        #        image: cengaver/controls:latest
+        #        privileged: true
+        #        entrypoint: [ "/autostart.sh" ]
+        #        network_mode: host
+        #        ipc: host
+        #        volumes:
+        #                - ./../config:/config

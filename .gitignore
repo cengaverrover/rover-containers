@@ -1,3 +1,5 @@
+.idea/
 ./gitClean
 ./archive/
-./build/*/*/
+build/**/*
+build/*/*

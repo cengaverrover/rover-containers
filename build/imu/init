@@ -1,2 +1,2 @@
-rm -rf ./bno055_ros2
-git clone --recurse-submodules https://github.com/cengaverrover/bno055_ros2.git
+rm -rf ./bno055
+git clone https://github.com/flynneva/bno055.git

@@ -12,7 +12,7 @@ for dockerfile in "$SCRIPT_DIR"/*/Dockerfile; do
     docker build --no-cache -f "$dockerfile" -t "cengaver/$tag" "$dir"
     if [ $? -ne 0 ]; then
         printf '\e[1;31m%-6s\e[m\n' "!!!Failed to build image for $tag!!!"
-	exit 1
+	      exit 1
     fi
 done
 

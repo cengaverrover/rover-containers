@@ -1,0 +1,8 @@
+rm -rf rover_teleoperation
+git clone https://github.com/alpertng02/rover_teleoperation.git
+
+rm -rf mobility_controller
+git clone https://github.com/alpertng02/mobility_controller.git -b new_protocol
+
+rm -rf manipulator_controller
+git clone https://github.com/alpertng02/manipulator_controller.git
