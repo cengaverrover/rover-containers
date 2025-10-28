@@ -26,4 +26,4 @@ RUN chmod +x /autostart.sh
 
 
 ENTRYPOINT ["/autostart.sh"]
-CMD debug
+CMD ["placeholder"]
