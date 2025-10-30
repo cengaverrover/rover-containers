@@ -10,14 +10,31 @@ source /ros_ws/install/setup.bash
 cp /configs/manipulator_controller_usb.yaml /ros_ws/src/manipulator_controller/config/.
 cp /configs/mobility_controller_usb.yaml /ros_ws/src/mobility_controller/config/.
 cp /configs/ds4_config.yaml /ros_ws/src/rover_teleoperation/config/.
+echo "updated configs"
 
-if [ "$1" == "debug" ]; then
-    echo "entering debug mode..."
-    exec bash
-elif [ "$1" == "default" ]; then
-    echo "running default mode..."
-    exec python3 autostart.launch.py
-else
-    echo -e "arguments: \n   default, debug"
+declare -A MODES=(
+    [terminal]="python3 autostart.launch.py"
+    [debug]="bash"
+)
+
+if [[ -z "$1" ]]; then
+    echo "Available modes:"
+    for key in "${!MODES[@]}"; do
+        echo "  - $key"
+    done
     exit 0
+fi
+
+MODE="$1"
+
+if [[ -n "${MODES[$MODE]}" ]]; then
+    echo "Running $MODE mode..."
+    exec ${MODES[$MODE]}
+else
+    echo "Invalid mode: $MODE"
+    echo "Available modes:"
+    for key in "${!MODES[@]}"; do
+        echo "  - $key"
+    done
+    exit 1
 fi

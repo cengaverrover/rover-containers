@@ -10,13 +10,30 @@ mkdir -p /ros_ws/src/rplidar_ros2/config/
 cp /configs/rplidar_config.yaml /ros_ws/src/rplidar_ros2/config/.
 echo "updated configs"
 
-if [ "$1" == "debug" ]; then
-    echo "entering debug mode..."
-    exec bash
-elif [ "$1" == "default" ]; then
-    echo "running default mode..."
-    exec ros2 launch rplidar_ros rplidar.launch.py
-else
-    echo -e "arguments: \n    default, debug"
+declare -A MODES=(
+    [terminal]="ros2 launch rplidar_ros rplidar.launch.py"
+    [visual]="ros2 launch rplidar_ros view_rplidar.launch.py"
+    [debug]="bash"
+)
+
+if [[ -z "$1" ]]; then
+    echo "Available modes:"
+    for key in "${!MODES[@]}"; do
+        echo "  - $key"
+    done
     exit 0
+fi
+
+MODE="$1"
+
+if [[ -n "${MODES[$MODE]}" ]]; then
+    echo "Running $MODE mode..."
+    exec ${MODES[$MODE]}
+else
+    echo "Invalid mode: $MODE"
+    echo "Available modes:"
+    for key in "${!MODES[@]}"; do
+        echo "  - $key"
+    done
+    exit 1
 fi
