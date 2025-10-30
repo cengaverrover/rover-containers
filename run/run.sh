@@ -9,6 +9,9 @@ if [ -z "$1" ] || [ "$1" == "-h" ] || [ "$1" == "help" ]; then
         exit 1
 fi
 
+# accept X11 gui requests from docker
+xhost +local:docker
+
 SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
 CONFIG_DIR="$(readlink -f "$SCRIPT_DIR/../config")"
 
