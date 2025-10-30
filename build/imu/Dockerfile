@@ -16,4 +16,4 @@ COPY autostart.sh /autostart.sh
 RUN chmod +x /autostart.sh
 
 ENTRYPOINT ["/autostart.sh"]
-CMD ["placeholder"]
+CMD [""]

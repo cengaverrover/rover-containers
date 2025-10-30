@@ -2,7 +2,7 @@ services:
         imu:
                 image: cengaver/imu:latest
                 privileged: true
-                entrypoint: ["/autostart.sh", "default"]
+                entrypoint: ["/autostart.sh", "terminal"]
                 network_mode: host
                 ipc: host
                 volumes:
@@ -10,7 +10,7 @@ services:
         lidar:
                 image: cengaver/lidar:latest
                 privileged: true
-                entrypoint: ["/autostart.sh", "default"]
+                entrypoint: ["/autostart.sh", "terminal"]
                 network_mode: host
                 ipc: host
                 volumes:
@@ -18,7 +18,7 @@ services:
         controls:
                 image: cengaver/controls:latest
                 privileged: true
-                entrypoint: ["/autostart.sh", "default"]
+                entrypoint: ["/autostart.sh", "terminal"]
                 network_mode: host
                 ipc: host
                 volumes:

@@ -12,13 +12,16 @@ fi
 # accept X11 gui requests from docker
 xhost +local:docker
 
+# find all configs' directory
 SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
 CONFIG_DIR="$(readlink -f "$SCRIPT_DIR/../config")"
 
+# run docker
 docker run \
   --privileged \
   --ipc=host \
   --net=host \
+  -e DISPLAY=$DISPLAY \
   -v "$CONFIG_DIR:/configs" \
   -it cengaver/"$1":latest \
   "${@:2}"
