@@ -7,7 +7,8 @@ source /opt/ros/humble/setup.bash
 
 declare -A MODES=(
     [drive]="python3 /ros_ws/rover-control-system/src/drive/jetson_drive_processor.py"
-    [arm]="python3 /ros_ws/rover-control-system/src/arm/jetson_arm_processor_ik.py"
+    [armik]="python3 /ros_ws/rover-control-system/src/arm/jetson_arm_processor_ik.py"
+    [armfk]="python3 /ros_ws/rover-control-system/src/arm/jetson_arm_processor_fk.py"
     [debug]="bash"
 )
 
