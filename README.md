@@ -2,9 +2,9 @@
 This package contains everything needed to built, edit and run all the containers used for the cengaver rover.
 
 ## Building Containers
-* The `buildall` script is used to <span style="color:MediumSeaGreen">refresh all git repositories used in all containers</span>, and then using them to build docker images. 
+* The `BuildAll.sh` script is used to <span style="color:MediumSeaGreen">refresh all git repositories used in all containers</span>, and then using them to build docker images. 
 ```bash
-./build/buildall.sh
+./build/BuildAll.sh
 #Best to do if you just cloned the repo.
 ```
 
@@ -16,19 +16,19 @@ This package contains everything needed to built, edit and run all the container
 #Run without <docker-image-name> to see options
 ```
 
-(Note that for `Buildspecific` to work, you need to have ran `buildall` at least once.)
+(Note that for `build.sh` to work, you need to have ran `BuildAll.sh` at least once.)
 
 ## Running Containers
-The main method for starting all containers is `startall`:
+The main method for starting all containers is `RunAll.sh`:
 
 ```bash
-./run/runall.sh
+./run/RunAll.sh
 ```
 
 Alternatively, for running a single container:
 
 ```bash
-./run/Run.sh <docker-image-name>
+./run/run.sh <docker-image-name>
 #Run without <docker-image-name> to see options
 ```
 ## Editing containers
