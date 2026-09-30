@@ -15,10 +15,18 @@ services:
                 ipc: host
                 volumes:
                         - ./../config:/configs
-        controls:
-                image: cengaver/controls:latest
+        drive_controls:
+                image: cengaver/pycontrols:latest
                 privileged: true
-                entrypoint: ["/autostart.sh", "terminal"]
+                entrypoint: ["/autostart.sh", "drive"]
+                network_mode: host
+                ipc: host
+                volumes:
+                        - ./../config:/configs
+        arm_controls:
+                image: cengaver/pycontrols:latest
+                privileged: true
+                entrypoint: ["/autostart.sh", "arm"]
                 network_mode: host
                 ipc: host
                 volumes:

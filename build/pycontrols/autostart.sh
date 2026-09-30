@@ -5,10 +5,6 @@ set -e #abort on error
 
 source /opt/ros/humble/setup.bash
 
-#refresh config file(s)
-#cp /configs/bno055_config.yaml /ros_ws/src/bno055/config/bno055_config.yaml
-#echo "updated configs"
-
 declare -A MODES=(
     [drive]="python3 /ros_ws/rover-control-system/src/drive/jetson_drive_processor.py"
     [arm]="python3 /ros_ws/rover-control-system/src/arm/jetson_arm_processor_ik.py"
