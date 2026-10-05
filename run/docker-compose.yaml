@@ -1,36 +1,32 @@
 services:
-        imu:
-                image: cengaver/imu:latest
+        #imu:
+        #        image: cengaver/imu:latest
+        #        privileged: true
+        #        entrypoint: ["/autostart.sh", "terminal"]
+        #        network_mode: host
+        #        ipc: host
+        #        volumes:
+        #                - ./../config:/configs
+        #lidar:
+        #        image: cengaver/lidar:latest
+        #        privileged: true
+        #        entrypoint: ["/autostart.sh", "terminal"]
+        #        network_mode: host
+        #        ipc: host
+        #        volumes:
+        #                - ./../config:/configs
+        foxglove_bridge:
+                image: cengaver/foxglove_bridge:latest
                 privileged: true
                 entrypoint: ["/autostart.sh", "terminal"]
                 network_mode: host
                 ipc: host
-                volumes:
-                        - ./../config:/configs
-        lidar:
-                image: cengaver/lidar:latest
+        foxglove_controller:
+                image: cengaver/foxglove_controller:latest
                 privileged: true
                 entrypoint: ["/autostart.sh", "terminal"]
                 network_mode: host
                 ipc: host
-                volumes:
-                        - ./../config:/configs
-        drive_controls:
-                image: cengaver/pycontrols:latest
-                privileged: true
-                entrypoint: ["/autostart.sh", "drive"]
-                network_mode: host
-                ipc: host
-                volumes:
-                        - ./../config:/configs
-        arm_controls:
-                image: cengaver/pycontrols:latest
-                privileged: true
-                entrypoint: ["/autostart.sh", "arm"]
-                network_mode: host
-                ipc: host
-                volumes:
-                        - ./../config:/configs
         #cameras:
         #        image: cengaver/controls:latest
         #        privileged: true

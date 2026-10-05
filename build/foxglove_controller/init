@@ -1,0 +1,5 @@
+rm -rf rover-control-system
+git clone https://github.com/cengaverrover/rover-control-system.git
+
+rm -rf foxglove-controller
+git clone https://github.com/cengaverrover/foxglove-controller.git
