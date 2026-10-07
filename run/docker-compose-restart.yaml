@@ -1,0 +1,6 @@
+services:
+  foxglove_controller:
+    restart: unless-stopped
+
+  foxglove_helper:
+    restart: unless-stopped
