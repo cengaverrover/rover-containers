@@ -6,7 +6,7 @@ set -e #abort on error
 source /opt/ros/humble/setup.bash
 
 declare -A MODES=(
-    [terminal]="ros2 run foxglove_bridge foxglove_bridge"
+    [terminal]="cd /ros_ws/gazebo-simulation/ && ros2 launch ./foxglove.launch.py"
     [debug]="bash"
 )
 
@@ -22,7 +22,7 @@ MODE="$1"
 
 if [[ -n "${MODES[$MODE]}" ]]; then
     echo "Running $MODE mode..."
-    exec ${MODES[$MODE]}
+    exec bash -c "${MODES[$MODE]}"
 else
     echo "Invalid mode: $MODE"
     echo "Available modes:"

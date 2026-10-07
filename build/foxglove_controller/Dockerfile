@@ -7,8 +7,8 @@ ENV RMW_IMPLEMENTATION rmw_cyclonedds_cpp
 
 RUN source /opt/ros/humble/setup.bash
 
-COPY ./rover-control-system/ /deps/rover-control-system/
 COPY ./foxglove-controller/ /ros_ws/src/foxglove-controller/
+COPY ./rover-control-system/ /deps/rover-control-system/
 
 WORKDIR /deps/rover-control-system
 RUN pip install --upgrade "setuptools<80" wheel pip

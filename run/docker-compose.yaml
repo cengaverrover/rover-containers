@@ -15,14 +15,16 @@ services:
         #        ipc: host
         #        volumes:
         #                - ./../config:/configs
-        foxglove_bridge:
-                image: cengaver/foxglove_bridge:latest
+        foxglove_controller:
+                image: cengaver/foxglove_controller:latest
                 privileged: true
                 entrypoint: ["/autostart.sh", "terminal"]
                 network_mode: host
                 ipc: host
-        foxglove_controller:
-                image: cengaver/foxglove_controller:latest
+                volumes:
+                  - /dev:/dev
+        foxglove_helper:
+                image: cengaver/foxglove_helper:latest
                 privileged: true
                 entrypoint: ["/autostart.sh", "terminal"]
                 network_mode: host

@@ -14,7 +14,6 @@ xhost +local:docker
 
 # find all configs' directory
 SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
-CONFIG_DIR="$(readlink -f "$SCRIPT_DIR/../config")"
 
 # run docker
 docker run \
@@ -22,6 +21,6 @@ docker run \
   --ipc=host \
   --net=host \
   -e DISPLAY=$DISPLAY \
-  -v "$CONFIG_DIR:/configs" \
+  -v /dev:/dev \
   -it cengaver/"$1":latest \
   "${@:2}"
