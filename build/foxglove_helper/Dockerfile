@@ -6,6 +6,7 @@ python3-libevdev \
 ros-humble-rmw-cyclonedds-cpp \
 python3-usb \
 ros-humble-robot-state-publisher \
+ros-humble-joint-state-publisher \
 ros-humble-foxglove-bridge \
 ros-humble-ros-gz-bridge \
 ros-humble-tf2-ros \

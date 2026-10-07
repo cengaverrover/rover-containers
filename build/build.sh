@@ -14,4 +14,4 @@ dockerfile="$SCRIPT_DIR/$1/Dockerfile"
 dir=$(dirname "$dockerfile")
 tag=$(basename "$dir")
 
-docker build -f "$dockerfile" -t "cengaver/$tag" "$dir"
+docker build -f "$dockerfile" -t "cengaver/$tag" "$dir" "${@:2}"

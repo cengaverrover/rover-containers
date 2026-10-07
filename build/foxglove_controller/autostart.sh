@@ -6,7 +6,7 @@ set -e #abort on error
 source /opt/ros/humble/setup.bash
 
 declare -A MODES=(
-    [terminal]="python3 /ros_ws/src/foxglove-controller/foxglove_controller/foxglove_controller.launch.py ${@:2}"
+    [terminal]="python3 /ros_ws/src/foxglove-controller/foxglove_controller/foxglove_controller.py ${@:2}"
     [debug]="bash"
 )
 

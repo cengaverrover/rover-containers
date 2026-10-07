@@ -7,9 +7,9 @@ for dockerfile in "$SCRIPT_DIR"/*/Dockerfile; do
     tag=$(basename "$dir")
 
     printf '\e[1;34m%-6s\e[m\n' "Building cengaver/$tag"
-    
-    (cd $dir && bash init)    
-    docker build --no-cache -f "$dockerfile" -t "cengaver/$tag" "$dir"
+
+    (cd $dir && bash init)
+    docker build --no-cache -f "$dockerfile" -t "cengaver/$tag" "$dir" "${@:2}"
     if [ $? -ne 0 ]; then
         printf '\e[1;31m%-6s\e[m\n' "!!!Failed to build image for $tag!!!"
 	      exit 1
