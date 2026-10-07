@@ -10,7 +10,9 @@ ros-humble-foxglove-bridge \
 ros-humble-ros-gz-bridge \
 ros-humble-tf2-ros \
 nodejs \
+ros-humble-joy \
 npm
+
 RUN npm install -g http-server
 ENV RMW_IMPLEMENTATION rmw_cyclonedds_cpp
 
