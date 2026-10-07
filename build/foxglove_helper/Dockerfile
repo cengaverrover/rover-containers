@@ -15,7 +15,6 @@ ros-humble-joy \
 npm
 
 RUN npm install -g http-server
-ENV RMW_IMPLEMENTATION rmw_cyclonedds_cpp
 
 COPY ./gazebo-simulation/ /ros_ws/gazebo-simulation/
 

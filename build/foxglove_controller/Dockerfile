@@ -3,7 +3,6 @@ SHELL ["/bin/bash","-c"]
 
 RUN apt-get update && apt-get install -y ros-humble-joy ros-humble-rmw-cyclonedds-cpp python3-usb python3-pip python3-numba python3-libevdev
 RUN pip3 install evdev numba
-ENV RMW_IMPLEMENTATION rmw_cyclonedds_cpp
 
 RUN source /opt/ros/humble/setup.bash
 
